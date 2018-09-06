@@ -14,6 +14,6 @@ public class KrollServerApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("KrollServerApplication Initiated!");
-
+		System.out.println("Email Configured in Jenkins Testing.");
 	}
 }
