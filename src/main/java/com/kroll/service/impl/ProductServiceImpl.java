@@ -8,37 +8,43 @@ import org.springframework.stereotype.Service;
 import com.kroll.dao.ProductDAO;
 import com.kroll.domain.Product;
 import com.kroll.service.ProductService;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class ProductServiceImpl implements ProductService{
 
-	@Autowired 
+	@Autowired
 	private ProductDAO productDAO;
-	
-	
+
+	public String test() {
+		return "Success";
+	}
+
 	@Override
 	public Product create(Product product) {
-		return productDAO.save(product);
-	}
-
-	@Override
-	public Product update(Product product) {
-		return productDAO.save(product);
-	}
-
-	@Override
-	public Product findById(long id) {
-		return productDAO.findById(id).get();
-	}
-
-	@Override
-	public Collection<Product> findAllMasterProducts(long companyId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Collection<Product> findAllItems(long categoryId) {
+	public Product update(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product findById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Collection<Product> findAllMasterProducts(long companyId) {
+		return productDAO.findAllMasterProducts(companyId);
+	}
+
+	@Override
+	public Collection<Product> findAllItems(long productId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -63,7 +69,8 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public Collection<Product> findAll() {
-		return productDAO.findAll();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

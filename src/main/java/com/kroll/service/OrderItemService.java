@@ -1,7 +1,5 @@
 package com.kroll.service;
 
-import java.util.Optional;
-
 import com.kroll.domain.OrderItem;
 
 public interface OrderItemService {
@@ -10,5 +8,5 @@ public interface OrderItemService {
 
     public OrderItem update(OrderItem order);
 
-    public Optional<OrderItem> findById(long orderId);
+    public OrderItem findById(long orderId);
 }

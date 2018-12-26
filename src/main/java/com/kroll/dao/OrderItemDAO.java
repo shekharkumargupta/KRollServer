@@ -1,11 +1,9 @@
 package com.kroll.dao;
 
+import com.kroll.domain.OrderItem;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.kroll.domain.Company;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CompanyDAO extends JpaRepository<Company, Long> {
-
+public interface OrderItemDAO extends JpaRepository<OrderItem, Long> {
 }

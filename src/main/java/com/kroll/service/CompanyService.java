@@ -1,7 +1,6 @@
 package com.kroll.service;
 
 import java.util.Collection;
-import java.util.Optional;
 
 import com.kroll.domain.Company;
 
@@ -13,5 +12,5 @@ public interface CompanyService {
 
     public Collection<Company> findAll();
 
-    public Optional<Company> findById(long companyId);
+    public Company findById(long companyId);
 }

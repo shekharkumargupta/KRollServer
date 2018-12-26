@@ -1,7 +1,6 @@
 package com.kroll.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.kroll.domain.CustomerOrder;
 
@@ -11,7 +10,7 @@ public interface OrderService {
 
     public CustomerOrder update(CustomerOrder customerOrder);
 
-    public Optional<CustomerOrder> findById(long orderId);
+    public CustomerOrder findById(long orderId);
 
     public List<CustomerOrder> findAllByCustomerLoginId(String customerLoginId);
     

@@ -1,7 +1,6 @@
 package com.kroll.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.kroll.domain.ShoppingCart;
 
@@ -15,7 +14,7 @@ public interface ShoppingCartService {
 
     public ShoppingCart remove(ShoppingCart cart);
 
-    public Optional<ShoppingCart> findById(long shoppingCartId);
+    public ShoppingCart findById(long shoppingCartId);
 
     public ShoppingCart findByCustomerLoginId(String customerLoginId);
     
