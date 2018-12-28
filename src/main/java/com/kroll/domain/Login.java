@@ -17,21 +17,13 @@ import com.kroll.constants.AppEnum;
  */
 @Entity
 @XmlRootElement
-
-@NamedQueries({
-		@NamedQuery(name = "Login.verifyUser", query = "select l from Login l where l.loginId = ?1 and l.password = ?2"),
-		@NamedQuery(name = "Login.findAllByUserType", query = "select l from Login l where l.company.id = ?1 and l.userType = ?2"),
-		@NamedQuery(name = "Login.search", query = "Select l from Login l where l.person.fullName like ?1 or "
-				+ "l.person.email like ?2 or l.person.address.city like ?3 or "
-				+ "l.person.mobileNumber like ?4"),
-		@NamedQuery(name = "Login.findByLoginId", query = "select l from Login l where l.loginId = ?1")
-})
 public class Login implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -2037554227962645752L;
+	private static final long serialVersionUID = 1l;
+
 	@Id
 	@GeneratedValue
 	private long id;

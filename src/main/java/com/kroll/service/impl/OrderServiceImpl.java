@@ -27,13 +27,6 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private LoginDAO loginDAO;
 
-    public OrderServiceImpl() {
-        System.out.println("Initialized: "+this.getClass().getName());
-
-        System.out.println("LoginDAO: "+loginDAO);
-        System.out.println("OrderDAO "+orderDAO);
-    }
-
     @Override
     public CustomerOrder create(CustomerOrder customerOrder) {
 

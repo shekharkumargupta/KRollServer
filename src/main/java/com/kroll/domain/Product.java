@@ -9,11 +9,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-@NamedQueries({
-		@NamedQuery(name = "Product.findAllProducts", query = "Select p from Product p where p.item = false and p.company.id = ?1"),
-		@NamedQuery(name = "Product.findAllItems", query = "Select p from Product p LEFT JOIN p.items i where p.item =true and i.id = ?1"),
-		@NamedQuery(name = "Product.findAllMasterProducts", query = "Select p from Product p where p.item =false and p.master = true and p.company.id = ?1")
-})
 public class Product implements Serializable{
 
 	/**
