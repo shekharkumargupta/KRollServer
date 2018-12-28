@@ -16,11 +16,9 @@ public interface LoginService {
 
     public List<Login> findAll();
 
-    public List<Login> findAllByProfession(String professionName);
-
     public List<Login> search(String searchString);
 
-    public Login find(Long id);
+    public Login findById(Long id);
 
     public Login findByLoginId(String loginId);
 

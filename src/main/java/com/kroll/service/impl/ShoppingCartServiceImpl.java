@@ -1,14 +1,8 @@
 package com.kroll.service.impl;
 
 import com.kroll.constants.AppEnum;
-import com.kroll.dao.LoginDAO;
-import com.kroll.dao.OrderItemDAO;
-import com.kroll.dao.ProductDAO;
-import com.kroll.dao.ShoppingCartDAO;
-import com.kroll.domain.Login;
-import com.kroll.domain.OrderItem;
-import com.kroll.domain.Product;
-import com.kroll.domain.ShoppingCart;
+import com.kroll.dao.*;
+import com.kroll.domain.*;
 import com.kroll.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +22,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     private ProductDAO productDAO;
     @Autowired
     private LoginDAO loginDAO;
+    @Autowired
+    private CustomerOrderDAO customerOrderDAO;
 
     @Override
     public ShoppingCart create(ShoppingCart cart) {
@@ -61,8 +57,10 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public ShoppingCart findByOrderId(String orderId) {
-        return shoppingCartDAO.findByOrderId(orderId);
+    public ShoppingCart findByOrderId(Long orderId) {
+
+        //return shoppingCartDAO.findByOrderId(orderId);
+        return customerOrderDAO.findById(orderId).get().getCart();
     }
 
     @Override

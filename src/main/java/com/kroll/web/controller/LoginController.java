@@ -6,6 +6,7 @@ import com.kroll.domain.Login;
 import com.kroll.domain.Person;
 import com.kroll.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -70,18 +71,12 @@ public class LoginController {
 
     @RequestMapping(value = "findAll", method = RequestMethod.GET, produces = "application/json")
     public List<Login> findAll() {
+
         List<Login> loginList = null;
         loginList = loginService.findAll();
         for (Login login : loginList) {
             System.out.println(login);
         }
-        return loginList;
-    }
-
-    @RequestMapping(value = "findByProfession/{profession}", method = RequestMethod.GET, produces = "application/json")
-    public List<Login> findByProfession(@PathVariable(value = "profession") String profession) {
-        List<Login> loginList = null;
-        loginList = loginService.findAllByProfession(profession);
         return loginList;
     }
 
@@ -109,4 +104,9 @@ public class LoginController {
         return login;
     }
 
+
+    @RequestMapping(value = "findById/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Login findById(@PathVariable(value = "id") long id){
+        return loginService.findById(id);
+    }
 }

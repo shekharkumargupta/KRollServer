@@ -1,13 +1,6 @@
 package com.kroll.domain;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.kroll.constants.AppEnum;
@@ -16,6 +9,9 @@ import com.kroll.constants.AppEnum;
 
 @Entity
 @XmlRootElement
+@NamedQueries({
+        @NamedQuery(name = "CustomerOrder.findAllByCompanyId", query = "Select o from CustomerOrder o where o.customer.company.id = ?1")
+})
 public class CustomerOrder {
 
     @Id

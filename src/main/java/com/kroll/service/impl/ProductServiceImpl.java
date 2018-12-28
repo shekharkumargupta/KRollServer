@@ -23,20 +23,19 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public Product create(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		productDAO.save(product);
+		return product;
 	}
 
 	@Override
 	public Product update(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		productDAO.save(product);
+		return product;
 	}
 
 	@Override
 	public Product findById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return productDAO.findById(id).get();
 	}
 
 	public Collection<Product> findAllMasterProducts(long companyId) {
@@ -45,32 +44,27 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public Collection<Product> findAllItems(long productId) {
-		// TODO Auto-generated method stub
-		return null;
+		return productDAO.findAllItems(productId);
 	}
 
 	@Override
 	public Collection<Product> findAllProducts(long companyId) {
-		// TODO Auto-generated method stub
-		return null;
+		return productDAO.findAllProducts(companyId);
 	}
 
 	@Override
 	public Collection<Product> findProductsByName(String productName) {
-		// TODO Auto-generated method stub
-		return null;
+		return productDAO.findProductsByName(productName);
 	}
 
 	@Override
 	public Collection<Product> findItemsByName(String itemName) {
-		// TODO Auto-generated method stub
-		return null;
+		return productDAO.findItemsByName(itemName);
 	}
 
 	@Override
 	public Collection<Product> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return productDAO.findAll();
 	}
 
 }

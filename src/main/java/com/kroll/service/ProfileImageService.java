@@ -8,5 +8,5 @@ public interface ProfileImageService {
 
     public ProfileImage update(ProfileImage image);
 
-    public ProfileImage findByLoginId(String loginId);
+    public ProfileImage findByPerson(Long personId);
 }

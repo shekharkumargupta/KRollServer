@@ -13,5 +13,5 @@ public interface ShoppingCartDAO extends JpaRepository<ShoppingCart, Long> {
 
     public List<ShoppingCart> findAllCartByCustomerLoginId(String customerLoginId);
 
-    public ShoppingCart findByOrderId(String orderId);
+    //public ShoppingCart findByOrderId(String orderId);
 }

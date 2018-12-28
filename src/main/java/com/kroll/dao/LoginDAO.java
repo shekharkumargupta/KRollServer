@@ -12,7 +12,7 @@ public interface LoginDAO extends JpaRepository<Login, Long> {
 
     public List<Login> findAllByUserType(long companyId, AppEnum.UserType userType);
 
-    public List<Login> findAllByProfession(String professionName);
+    //public List<Login> findAllByProfession(String professionName);
 
     public List<Login> search(String searchString);
 

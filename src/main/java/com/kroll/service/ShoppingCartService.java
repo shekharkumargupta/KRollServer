@@ -20,5 +20,5 @@ public interface ShoppingCartService {
     
     public List<ShoppingCart> findAllCartByCustomerLoginId(String customerLoginId);
 
-    public ShoppingCart findByOrderId(String orderId);
+    public ShoppingCart findByOrderId(Long orderId);
 }

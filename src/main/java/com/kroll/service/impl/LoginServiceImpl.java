@@ -94,12 +94,6 @@ public class LoginServiceImpl implements LoginService {
         return loginList;
     }
 
-    public List<Login> findByProfession(String profession) {
-        List<Login> loginList = null;
-        loginList = loginDAO.findAllByProfession(profession);
-        return loginList;
-    }
-
     public List<Login> search(String searchString) {
         List<Login> loginList = null;
         loginList = loginDAO.search(searchString);
@@ -115,32 +109,25 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public Login update(Login login) {
-        // TODO Auto-generated method stub
-        return null;
+        loginDAO.save(login);
+        return login;
     }
 
     @Override
     public Login remove(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+        Login login = loginDAO.findById(id).get();
+        loginDAO.deleteById(id);
+        return login;
     }
 
     @Override
-    public List<Login> findAllByProfession(String professionName) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Login find(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Login findById(Long id) {
+        return loginDAO.findById(id).get();
     }
 
     @Override
     public Login verifyUser(String loginId, String password) {
-        // TODO Auto-generated method stub
-        return null;
+        return loginDAO.verifyUser(loginId, password);
     }
 
     @Override
