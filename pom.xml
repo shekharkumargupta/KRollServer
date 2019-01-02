@@ -62,7 +62,6 @@
 		<dependency>
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
-			<version></version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
