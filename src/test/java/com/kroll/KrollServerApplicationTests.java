@@ -20,8 +20,29 @@ import java.util.Collections;
 public class KrollServerApplicationTests {
 
 
+	@Autowired
+	MockMvc mockMvc;
+
+	@MockBean
+	ProductDAO productDAO;
+
 	@Test
 	public void contextLoads() throws Exception {
+
+		/*
+		Mockito.when(productDAO.findAllMasterProducts(Mockito.anyLong()))
+				.thenReturn(Collections.emptyList());
+
+		MvcResult mvcResult = mockMvc.perform(
+				MockMvcRequestBuilders
+						.get("/product/findAllMasterProducts/1")
+						.accept(MediaType.APPLICATION_JSON)
+		).andReturn();
+
+		System.out.println(mvcResult.getResponse());
+
+		Mockito.verify(productDAO).findAllMasterProducts(Mockito.anyLong());
+		*/
 	}
 
 }
