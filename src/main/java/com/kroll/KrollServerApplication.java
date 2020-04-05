@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class KrollServerApplication {
 
 	public static void main(String[] args) {
+		System.out.println("PaymentIntegration");
 		SpringApplication.run(KrollServerApplication.class, args);
 	}
 }
